@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Indigenous Cultural Heritage Portal — System Guide</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 16mm 14mm; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Calibri, Arial, sans-serif;
+    color: #2c2416;
+    font-size: 11pt;
+    line-height: 1.45;
+    background: #fff;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: #5c3310; margin: 0 0 8px; line-height: 1.2; }
+  p { margin: 0 0 8px; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Cover */
+  .cover {
+    height: 267mm;
+    background: #3d2914;
+    color: #f6efe4;
+    padding: 22mm 16mm 16mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-kicker {
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 9.5pt;
+    color: #e2c39a;
+    margin-bottom: 18mm;
+  }
+  .cover h1 {
+    color: #fff8ee;
+    font-size: 34pt;
+    line-height: 1.05;
+    margin-bottom: 8mm;
+    max-width: 150mm;
+  }
+  .cover .sub {
+    font-size: 14pt;
+    color: #f0dcc0;
+    max-width: 145mm;
+    line-height: 1.4;
+  }
+  .cover-band {
+    margin-top: 16mm;
+    border-top: 1px solid rgba(226,195,154,0.45);
+    padding-top: 8mm;
+    display: flex;
+    gap: 8mm;
+  }
+  .cover-pill {
+    border: 1px solid rgba(226,195,154,0.5);
+    border-radius: 4px;
+    padding: 4mm 5mm;
+    font-size: 9.5pt;
+    color: #f6efe4;
+    width: 48mm;
+  }
+  .cover-pill strong { display: block; color: #fff; font-size: 11pt; margin-bottom: 1mm; }
+  .cover-foot {
+    position: absolute;
+    left: 16mm;
+    right: 16mm;
+    bottom: 14mm;
+    font-size: 9.5pt;
+    color: #d7c2a4;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rule { height: 3px; width: 28mm; background: #c4843a; margin: 8mm 0 10mm; }
+
+  /* Inner */
+  .hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid #8b5a2b;
+    padding-bottom: 3mm;
+    margin-bottom: 6mm;
+    font-size: 8.5pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #8b5a2b;
+  }
+  h2 { font-size: 18pt; margin-bottom: 3mm; }
+  h3 { font-size: 13pt; margin: 4mm 0 2mm; }
+  .lead { font-size: 12pt; color: #3d2914; margin-bottom: 4mm; }
+
+  .box {
+    background: #f7f1e8;
+    border-left: 4px solid #8b5a2b;
+    padding: 3.5mm 4.5mm;
+    margin: 3mm 0 4mm;
+  }
+  .box strong { color: #5c3310; }
+
+  .grid2 { display: flex; gap: 4mm; }
+  .grid3 { display: flex; gap: 3.5mm; }
+  .card {
+    flex: 1;
+    border: 1px solid #e4d5c0;
+    border-radius: 4px;
+    padding: 3.5mm 4mm;
+    background: #fff;
+  }
+  .card h3 { margin-top: 0; font-size: 12pt; }
+  .tag {
+    display: inline-block;
+    background: #8b5a2b;
+    color: #fff;
+    font-size: 8pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.6mm 2mm;
+    border-radius: 2px;
+    margin-bottom: 2mm;
+  }
+  .tag.gold { background: #c4843a; }
+  .tag.green { background: #3f6b4a; }
+
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 10pt; }
+  th, td { text-align: left; vertical-align: top; padding: 2mm 2.2mm; border-bottom: 1px solid #eadfce; }
+  th { background: #3d2914; color: #f6efe4; font-weight: 600; font-size: 9pt; letter-spacing: 0.03em; }
+  tr:nth-child(even) td { background: #fbf7f2; }
+
+  ol, ul { margin: 1mm 0 3mm; padding-left: 5mm; }
+  li { margin-bottom: 1.2mm; }
+
+  .flow { display: flex; align-items: stretch; gap: 2mm; margin: 3mm 0 4mm; }
+  .flow .step {
+    flex: 1;
+    background: #3d2914;
+    color: #fff8ee;
+    padding: 3mm;
+    border-radius: 3px;
+    font-size: 9.5pt;
+  }
+  .flow .step b { display: block; color: #f0d7b0; font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1mm; }
+  .arrow { align-self: center; color: #c4843a; font-size: 14pt; font-weight: 700; }
+
+  .mini {
+    font-size: 9pt;
+    color: #6b5844;
+  }
+  .foot {
+    margin-top: 6mm;
+    border-top: 1px solid #eadfce;
+    padding-top: 2mm;
+    font-size: 8.5pt;
+    color: #8a7360;
+    display: flex;
+    justify-content: space-between;
+  }
+  code, .mono { font-family: Consolas, "Courier New", monospace; font-size: 9.5pt; background: #f3ebe1; padding: 0 1.2mm; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-kicker">System guide &nbsp;·&nbsp; easy to share</div>
+  <h1>Indigenous Cultural Heritage Portal</h1>
+  <div class="rule"></div>
+  <p class="sub">A full, plain-language explanation of the whole website: what it is for, who uses it, how the pages and database work together, and how to run it.</p>
+  <div class="cover-band">
+    <div class="cover-pill"><strong>For visitors</strong>Browse crafts, stories, photos, and send a message.</div>
+    <div class="cover-pill"><strong>For members</strong>Register, sign in, and use a personal dashboard.</div>
+    <div class="cover-pill"><strong>For admins</strong>Add, edit, and delete all cultural content.</div>
+  </div>
+  <div class="cover-foot">
+    <span>PHP · MySQL · HTML · CSS · JavaScript</span>
+    <span>Runs on WAMP / XAMPP</span>
+  </div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>01 &nbsp; The idea</span></div>
+  <h2>What this system is</h2>
+  <p class="lead">It is a website that keeps indigenous culture in one place so people can learn it, and so an administrator can keep the records up to date.</p>
+  <p>Think of it as a small digital museum. The shelves are the pages: crafts, traditions, materials, stories, and a photo gallery. The storeroom behind the museum is a MySQL database. The staff door is the admin panel.</p>
+  <div class="box">
+    <strong>In one sentence.</strong> A person opens the site in a browser. PHP pages ask the database for the latest crafts, traditions, materials, stories, and photos, then draw them as a normal website. Only an admin can change what is stored.
+  </div>
+  <h3>Why it exists</h3>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag">Purpose</span>
+      <p>To show traditional crafts, ceremonies, materials, clothing, music, dances, stories, and artworks, and to explain why they matter.</p>
+    </div>
+    <div class="card">
+      <span class="tag gold">Who it helps</span>
+      <p>Students, community members, and anyone who wants a clear record of living heritage — without editing the code every time something new is added.</p>
+    </div>
+  </div>
+  <h3>The three people who use it</h3>
+  <table>
+    <tr><th>Person</th><th>Needs an account?</th><th>What they can do</th></tr>
+    <tr><td><strong>Visitor</strong></td><td>No</td><td>Read every public page, search and filter, open photos, and send a contact message.</td></tr>
+    <tr><td><strong>Member</strong></td><td>Yes — they register</td><td>Same as a visitor, plus a personal dashboard after login. They cannot edit the archive.</td></tr>
+    <tr><td><strong>Admin</strong></td><td>Yes — created in the database</td><td>See counts, add / edit / delete content, upload images, and read or delete messages.</td></tr>
+  </table>
+  <p class="mini">Members and admins share one login page. The system checks the admin list first. If the username is an admin, it opens the admin dashboard. If not, it checks the member list and opens the member dashboard.</p>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>02 &nbsp; The public site</span></div>
+  <h2>What a visitor sees</h2>
+  <p>The address on a local computer is <span class="mono">http://localhost/indigenous-heritage</span>. The menu is the same on every public page.</p>
+  <table>
+    <tr><th>Page</th><th>File</th><th>What it shows</th></tr>
+    <tr><td>Home</td><td>index.php</td><td>A welcome banner, counts, featured crafts, traditions, and stories, plus a few gallery photos.</td></tr>
+    <tr><td>Crafts</td><td>crafts.php</td><td>Handmade works: name, description, materials used, cultural meaning, category, and photo.</td></tr>
+    <tr><td>Traditions</td><td>traditions.php</td><td>Ceremonies, dances, rituals, and other practices, with type and place of origin.</td></tr>
+    <tr><td>Materials</td><td>materials.php</td><td>Bamboo, rattan, clay, and similar materials: what they are, how they are used, and why they matter.</td></tr>
+    <tr><td>Stories</td><td>stories.php</td><td>Legends, myths, and folk tales, with author, category, and origin.</td></tr>
+    <tr><td>Gallery</td><td>gallery.php</td><td>Photos of crafts and cultural life. Clicking a photo opens a larger view (a lightbox).</td></tr>
+    <tr><td>About</td><td>about.php</td><td>Why the portal exists and the values behind it: respect, archiving, education, and care for the land.</td></tr>
+    <tr><td>Contact</td><td>contact.php</td><td>A form. The message is saved in the database for the admin to read.</td></tr>
+  </table>
+  <h3>Small extras on the public pages</h3>
+  <ul>
+    <li><strong>Search and filter</strong> live in the browser. The page already loaded the cards from the database. Typing in the search box, or picking a category, hides cards that do not match. Nothing new is asked from the database.</li>
+    <li><strong>Mobile menu.</strong> On a small screen, the three-line button opens and closes the menu.</li>
+    <li><strong>Sample records</strong> come with the database: baskets, beadwork, pottery, a harvest festival, bamboo, rattan, clay, and three stories. An admin can replace all of these.</li>
+  </ul>
+  <div class="box">
+    <strong>Home page counts.</strong> The opening numbers are read from the database. The hero uses those counts, and it will not display a number smaller than a set minimum, so the banner never looks empty on a fresh install.
+  </div>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>03 &nbsp; How it is built</span></div>
+  <h2>How the pieces fit</h2>
+  <p class="lead">Four parts do the work. Each one has a single job.</p>
+  <div class="flow">
+    <div class="step"><b>1. Browser</b>The person sees HTML pages styled by CSS, with small interactions from JavaScript.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>2. PHP</b>Each .php file decides what to show, checks forms, and talks to the database.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>3. MySQL</b>The database named indigenous_heritage stores every record.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>4. Images</b>Photo files sit in the images folder. The database only stores the file name.</div>
+  </div>
+  <h3>The connection file</h3>
+  <p>Almost every page starts by loading <span class="mono">config/database.php</span>. That file opens MySQL with these defaults:</p>
+  <table>
+    <tr><th>Setting</th><th>Value on a normal WAMP install</th></tr>
+    <tr><td>Host</td><td>localhost</td></tr>
+    <tr><td>Username</td><td>root</td></tr>
+    <tr><td>Password</td><td>empty</td></tr>
+    <tr><td>Database</td><td>indigenous_heritage</td></tr>
+  </table>
+  <p>If the connection fails, the page stops and says “Connection failed.” Apache and MySQL both need to be running in WAMP.</p>
+  <h3>What each folder is for</h3>
+  <table>
+    <tr><th>Place</th><th>Job</th></tr>
+    <tr><td>Root folder</td><td>Public pages: home, crafts, traditions, materials, stories, gallery, about, contact, register, and the member dashboard.</td></tr>
+    <tr><td>admin/</td><td>Login, dashboard, and the screens that add, edit, and delete content. Also the message inbox and logout.</td></tr>
+    <tr><td>config/</td><td>Database connection, a helper that cleans text, and a helper that saves uploaded photos.</td></tr>
+    <tr><td>css/style.css</td><td>All colors, layout, cards, and the admin look. Earth tones are set as CSS variables at the top.</td></tr>
+    <tr><td>js/script.js</td><td>Mobile menu, search and filter, and the gallery lightbox.</td></tr>
+    <tr><td>images/</td><td>Photos. New uploads get a unique file name so two files never overwrite each other.</td></tr>
+    <tr><td>database/</td><td>The SQL file that creates the tables and the sample content.</td></tr>
+  </table>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>04 &nbsp; Members</span></div>
+  <h2>How a member joins</h2>
+  <p>Registration is the page <span class="mono">register.php</span>. The person fills in full name, username, email, and password.</p>
+  <ol>
+    <li>The form refuses empty required fields, a password shorter than 6 characters, a password that does not match the confirmation, and an email that is not a real email shape.</li>
+    <li>It checks that the username is not already taken, then that the email is not already taken.</li>
+    <li>The password is turned into a hash with PHP’s <span class="mono">password_hash</span>. The real password is not stored.</li>
+    <li>A new row is saved in the <strong>users</strong> table.</li>
+    <li>The person is told they can log in. Login is the same page the admin uses: <span class="mono">admin/login.php</span>.</li>
+  </ol>
+  <h3>What happens at login</h3>
+  <div class="flow">
+    <div class="step"><b>Type name and password</b>One form for everyone.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Look in admins</b>If the username is an admin and the password matches, open the admin dashboard.</div>
+    <div class="arrow">→</div>
+    <div class="step"><b>Else look in users</b>If it matches a member, open the member dashboard.</div>
+  </div>
+  <p>A match is checked with <span class="mono">password_verify</span>, which compares the typed password to the stored hash. On success, PHP starts a session and remembers who is logged in. Refreshing the page does not log them out. Logging out destroys that session.</p>
+  <h3>The member dashboard</h3>
+  <p><span class="mono">user_dashboard.php</span> only opens if the session says this person is a member. Otherwise it sends them back to login. The page greets them by name and shows how many crafts, traditions, stories, and gallery items exist, with links to keep browsing. It does not let them change records.</p>
+  <div class="box">
+    <strong>Already logged in?</strong> Opening the login page again sends an admin straight to the admin dashboard, and a member straight to the member dashboard.
+  </div>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>05 &nbsp; Admin</span></div>
+  <h2>How the admin runs the archive</h2>
+  <p>After login, the admin lands on <span class="mono">admin/dashboard.php</span>. Every admin page checks the session first. If there is no admin session, the page sends the person back to login. A member session is not enough.</p>
+  <div class="grid3">
+    <div class="card"><span class="tag">Dashboard</span><p>Counts of crafts, traditions, materials, stories, gallery items, and unread messages, plus the latest messages.</p></div>
+    <div class="card"><span class="tag gold">Content</span><p>Separate screens for crafts, traditions, materials, stories, and gallery.</p></div>
+    <div class="card"><span class="tag green">Inbox</span><p>Contact messages can be opened, marked read, or deleted.</p></div>
+  </div>
+  <h3>Create, read, update, delete</h3>
+  <p>These four actions are usually called CRUD. They are the whole job of the admin screens.</p>
+  <table>
+    <tr><th>Action</th><th>Plain meaning</th><th>What the code does</th></tr>
+    <tr><td><strong>Create</strong></td><td>Add a new record</td><td>A form is posted. PHP checks the fields, saves an image if one was chosen, then runs an INSERT.</td></tr>
+    <tr><td><strong>Read</strong></td><td>Show what is already stored</td><td>A SELECT loads the rows and the page prints them as a list or as cards.</td></tr>
+    <tr><td><strong>Update</strong></td><td>Change an existing record</td><td>The form is filled with the old values. Saving runs an UPDATE for that id.</td></tr>
+    <tr><td><strong>Delete</strong></td><td>Remove a record</td><td>A DELETE runs for that id. The public page simply stops showing it.</td></tr>
+  </table>
+  <p>Inserts and updates use prepared statements (<span class="mono">prepare</span> and <span class="mono">bind_param</span>). The values are sent separately from the SQL, which is the safe way to take text from a form.</p>
+  <h3>What each admin screen saves</h3>
+  <table>
+    <tr><th>Screen</th><th>Fields the admin fills in</th></tr>
+    <tr><td>Crafts</td><td>Name, description, materials, cultural significance, category, image</td></tr>
+    <tr><td>Traditions</td><td>Name, description, type, origin, image</td></tr>
+    <tr><td>Materials</td><td>Name, description, uses, cultural importance, image</td></tr>
+    <tr><td>Stories</td><td>Title, content, author, category, origin, image</td></tr>
+    <tr><td>Gallery</td><td>Title, description, category, image (the image is required)</td></tr>
+    <tr><td>Messages</td><td>No composing here. The admin only reads, marks read, or deletes.</td></tr>
+  </table>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>06 &nbsp; Two real paths</span></div>
+  <h2>Follow one craft from form to homepage</h2>
+  <ol>
+    <li>The admin opens Crafts in the sidebar and fills in the basket’s name, description, materials, meaning, and category, then chooses a photo.</li>
+    <li>PHP checks that the file really is an image, that it is under 5 MB, and that it is JPG, JPEG, PNG, or GIF.</li>
+    <li>The file is saved in <span class="mono">images/</span> under a new unique name, such as a long id plus <span class="mono">.jpg</span>.</li>
+    <li>A new row is inserted into the <strong>crafts</strong> table. The image column stores only that file name.</li>
+    <li>The next time someone opens the home page or the crafts page, a SELECT reads that row and the browser shows the card. The photo address points at the file in <span class="mono">images/</span>.</li>
+  </ol>
+  <h2>Follow one contact message</h2>
+  <ol>
+    <li>A visitor opens Contact and types name, email, subject, and message.</li>
+    <li>PHP rejects a blank field or a badly shaped email.</li>
+    <li>The text is cleaned, then inserted into the <strong>messages</strong> table. New messages start as unread.</li>
+    <li>The dashboard count of unread messages goes up.</li>
+    <li>The admin opens Messages, reads it (which marks it read), and can delete it when it is no longer needed.</li>
+  </ol>
+  <div class="box">
+    <strong>The split to remember.</strong> Words live in MySQL. Picture files live in the images folder. The database column is only a pointer to the file name. If the file is missing, the page still has the text, but the picture will not appear.
+  </div>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>07 &nbsp; The database</span></div>
+  <h2>The tables, in plain words</h2>
+  <p>The database name is <strong>indigenous_heritage</strong>. Each table is a list. Each row is one item. The <span class="mono">id</span> column is the number that identifies that row. <span class="mono">created_at</span> is the time it was added. Content tables also keep <span class="mono">updated_at</span>, which changes when the row is edited.</p>
+  <table>
+    <tr><th>Table</th><th>One row means</th><th>Important columns</th></tr>
+    <tr><td>admins</td><td>One administrator</td><td>username, password (hashed), email</td></tr>
+    <tr><td>users</td><td>One registered member</td><td>username, password (hashed), email, full_name</td></tr>
+    <tr><td>crafts</td><td>One craft</td><td>name, description, materials, cultural_significance, image, category</td></tr>
+    <tr><td>traditions</td><td>One practice</td><td>name, description, type, origin, image</td></tr>
+    <tr><td>materials</td><td>One material</td><td>name, description, uses, cultural_importance, image</td></tr>
+    <tr><td>stories</td><td>One story</td><td>title, content, author, category, origin, image</td></tr>
+    <tr><td>gallery</td><td>One photo</td><td>title, description, image, category</td></tr>
+    <tr><td>messages</td><td>One contact form</td><td>name, email, subject, message, is_read</td></tr>
+  </table>
+  <p>These lists do not depend on each other with foreign keys. A craft does not point at a row in materials. The materials of a craft are written as text on the craft itself. That keeps the project simple: deleting a gallery photo does not break a craft, and the other way around.</p>
+  <div class="box">
+    <strong>Sample content.</strong> Importing <span class="mono">database/indigenous_heritage.sql</span> creates every table, one admin account, and a few crafts, traditions, materials, stories, and gallery items so the site is not blank on the first visit.
+  </div>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>08 &nbsp; Safety and setup</span></div>
+  <h2>How the site protects itself</h2>
+  <table>
+    <tr><th>Protection</th><th>What it does</th></tr>
+    <tr><td>Hashed passwords</td><td>Passwords are stored as hashes. Login checks the hash, so the typed password is not saved in the database.</td></tr>
+    <tr><td>Sessions</td><td>Admin pages and the member dashboard refuse to open unless the correct session exists.</td></tr>
+    <tr><td>Prepared statements</td><td>Form values for saving and logging in are bound separately, so typed text is treated as data, not as a new SQL command.</td></tr>
+    <tr><td>Input cleaning</td><td><span class="mono">sanitize_input</span> trims spaces, strips slashes, encodes HTML characters, and escapes the string for MySQL.</td></tr>
+    <tr><td>Upload checks</td><td>A file must be a real image, 5 MB or smaller, and JPG, JPEG, PNG, or GIF. It is renamed before it is saved.</td></tr>
+  </table>
+  <h2>How to run it</h2>
+  <ol>
+    <li>Start Apache and MySQL in WAMP (the same steps work in XAMPP).</li>
+    <li>Open phpMyAdmin at <span class="mono">http://localhost/phpmyadmin</span>.</li>
+    <li>Import <span class="mono">database/indigenous_heritage.sql</span>. It creates the database and the tables.</li>
+    <li>Leave the folder inside the WAMP www directory, which is where this project already lives.</li>
+    <li>Open <span class="mono">http://localhost/indigenous-heritage</span>.</li>
+    <li>If MySQL is not using user <span class="mono">root</span> with an empty password, edit those four lines in <span class="mono">config/database.php</span>.</li>
+  </ol>
+  <h3>Signing in the first time</h3>
+  <p>Go to <span class="mono">http://localhost/indigenous-heritage/admin/login.php</span>.</p>
+  <table>
+    <tr><th></th><th>Value</th></tr>
+    <tr><td>Username</td><td>admin</td></tr>
+    <tr><td>Password after a fresh import</td><td>password</td></tr>
+  </table>
+  <p class="mini">The README mentions admin123. The hash in the SQL file matches the word password, so a fresh import uses admin / password. Change that password after the first login. Members use this same page after they register.</p>
+  <p><strong>Connection failed:</strong> MySQL is stopped, the database was not imported, or config does not match WAMP. <strong>No pictures:</strong> the file is missing from <span class="mono">images/</span> or the stored name does not match. <strong>Cannot log in:</strong> the admins table is empty, or the password does not match the imported hash.</p>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>System guide</span></div>
+</section>
+
+<section class="page">
+  <div class="hd"><span>Indigenous Heritage Portal</span><span>09 &nbsp; Sharing the explanation</span></div>
+  <h2>A short way to present it</h2>
+  <p class="lead">If you are explaining this to a class or a panel, these seven points cover the whole system. Say them in this order.</p>
+  <ol>
+    <li><strong>The goal.</strong> One website that preserves and shows indigenous crafts, traditions, materials, stories, and photos.</li>
+    <li><strong>Three roles.</strong> Visitors browse. Members register and get a dashboard. Admins edit the archive.</li>
+    <li><strong>The stack.</strong> The browser shows the page. PHP does the work. MySQL stores the records. Image files sit in a folder.</li>
+    <li><strong>The database.</strong> Eight tables: admins, users, crafts, traditions, materials, stories, gallery, and messages. Each row is one item.</li>
+    <li><strong>CRUD.</strong> The admin can create, read, update, and delete. The public pages only read.</li>
+    <li><strong>One example.</strong> Adding a craft uploads a checked image, saves a row, and the crafts page shows it on the next visit. A contact form does the same kind of save into messages.</li>
+    <li><strong>Safety.</strong> Passwords are hashed, admin pages need a session, forms use prepared statements, and uploads are limited to real images.</li>
+  </ol>
+  <h3>Colors, if you want to restyle it</h3>
+  <p>Open <span class="mono">css/style.css</span> and change the variables at the top, such as the primary brown, the secondary clay color, and the accent. You do not need to hunt through every rule.</p>
+  <h3>Content, if you want to change what people read</h3>
+  <p>Use the admin panel. New crafts, stories, and photos do not require a code change. Code changes are only for layout, new pages, or new kinds of data.</p>
+  <div class="box">
+    <strong>What to remember.</strong> The public site is a window. The admin panel is the workshop. The database is the record book. PHP is the person who carries information between the window, the workshop, and the book.
+  </div>
+  <p class="mini" style="margin-top: 6mm;">This guide describes the Indigenous Cultural Heritage Portal as it is built: PHP pages, one MySQL database, shared CSS and JavaScript, and an admin area for content and messages. It is written so it can be handed to someone who has not opened the code.</p>
+  <div class="foot"><span>Indigenous Cultural Heritage Portal</span><span>End of guide</span></div>
+</section>
+
+</body>
+</html>
